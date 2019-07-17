@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 /* Main page */
 .main-page {
@@ -10,7 +11,7 @@
 
 .main-page .ilustration {
   width: auto;
-  margin: 10vh auto 0;
+  margin: 10vh auto 20px;
 }
 
 .main-page h1,
@@ -19,15 +20,15 @@ a {
   color: #424c6d;
 }
 .main-page h1 {
-  font-weight: 600;
+  font-weight: 700;
 }
 .main-page p {
   line-height: normal;
-  margin: 15px 0 !important;
+  margin: 10px 0 !important;
 }
 
 .main-page .contact {
-  padding: 10px 0;
+  padding: 5px 0;
   box-sizing: border-box;
 }
 
