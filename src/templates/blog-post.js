@@ -6,12 +6,8 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
 
-    console.log(post, 'POST ANJING')
-    return (
-      <div>
-        {post.excerpt}
-      </div>
-    )
+    console.log(post, "POST ANJING")
+    return <div dangerouslySetInnerHTML={{ __html: post.html }} />
   }
 }
 
