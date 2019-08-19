@@ -5,7 +5,7 @@ class BlogPage extends React.Component {
   render() {
     const { data } = this.props
 
-    console.log(data, "prop")
+    console.log(this.props, "prop")
 
     return <h1>BLog</h1>
   }
@@ -28,7 +28,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            description
           }
         }
       }
