@@ -15,7 +15,7 @@ const BlogHeader = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
+  z-index: 5;
 `
 const BlogHeaderTitle = styled.h1`
   text-align: center;
@@ -24,7 +24,6 @@ const BlogHeaderTitle = styled.h1`
   font-size: 42px;
 `
 const BlogListPost = styled.div`
-  /* background-color: red; */
   padding: 80px 0;
 `
 
@@ -37,6 +36,7 @@ const SVGWrapper = styled.div`
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
+  z-index: -1;
 `
 const WavesSVG = styled.svg`
   display: block;
@@ -80,11 +80,12 @@ function BlogPage({ data }) {
           <BlogHeaderTitle className="pb-5">My Journal</BlogHeaderTitle>
         </div>
         <SVGWrapper>
+          {/* f6f8fc */}
           <WavesSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
               fill="#f6f8fc"
-              fill-opacity="1"
-              d="M0,288L120,261.3C240,235,480,181,720,181.3C960,181,1200,235,1320,261.3L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+              fillOpacity={1}
+              d="M0,256L80,250.7C160,245,320,235,480,240C640,245,800,267,960,266.7C1120,267,1280,245,1360,234.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
             ></path>
           </WavesSVG>
         </SVGWrapper>
