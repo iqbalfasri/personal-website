@@ -1,11 +1,22 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+:root {
+  --primary-color: #4a76f3;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f6f8fc;
+}
 
 /* Main page */
 .main-page {
   height: 100%;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -36,4 +47,16 @@ a {
   .main-page .ilustration {
     width: 100%;
   }
+}
+
+/* Blog */
+.post-card {
+  background-color: aquamarine;
+}
+
+/* Blog header */
+
+/* SVG Style */
+.svg-waves {
+  display: block;
 }
