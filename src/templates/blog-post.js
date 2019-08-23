@@ -1,14 +1,19 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { Fragment } from "react"
+import { graphql } from "gatsby"
+import Seo from "../components/seo"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+function BlogPostTemplate({ data }) {
+  const post = data.markdownRemark
+  const title = post.frontmatter.title
+  const content = post.html
 
-    console.log(post, "POST ANJING")
-    return <div dangerouslySetInnerHTML={{ __html: post.html }} />
-  }
+  return (
+    <Fragment>
+      <Seo title={`${title} - Blog`} description={title} />
+      <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </Fragment>
+  )
 }
 
 export default BlogPostTemplate

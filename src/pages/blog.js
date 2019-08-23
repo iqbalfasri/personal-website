@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Seo from "../components/seo"
 import styled from "styled-components"
 
 /**
@@ -75,6 +76,7 @@ function BlogPage({ data }) {
 
   return (
     <div>
+      <Seo title={"Blog"} />
       <BlogHeader>
         <div className="container">
           <BlogHeaderTitle className="pb-5">My Journal</BlogHeaderTitle>
