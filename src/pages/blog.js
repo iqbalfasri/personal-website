@@ -49,8 +49,10 @@ const WavesSVG = styled.svg`
  */
 const CustomLink = styled(Link)`
   width: 100%;
-  display: block;
-  padding: 40px 15px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
   max-height: 350px;
   min-height: 100%;
   box-sizing: border-box;
