@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../components/seo"
+import Layout from "../components/layout"
 import styled from "styled-components"
 
 /**
@@ -77,7 +78,7 @@ function BlogPage({ data }) {
   console.log(edges)
 
   return (
-    <div>
+    <Layout>
       <Seo title={"Blog"} />
       <BlogHeader>
         <div className="container">
@@ -120,7 +121,7 @@ function BlogPage({ data }) {
           </div>
         </div>
       </BlogListPost>
-    </div>
+    </Layout>
   )
 }
 
