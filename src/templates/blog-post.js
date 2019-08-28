@@ -6,6 +6,7 @@ function BlogPostTemplate({ data }) {
   const post = data.markdownRemark
   const title = post.frontmatter.title
   const content = post.html
+  console.log(post)
 
   return (
     <Fragment>
@@ -27,7 +28,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 30)
       html
       frontmatter {
         title

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
@@ -20,10 +20,12 @@ const BlogHeader = styled.div`
   z-index: 5;
 `
 const BlogHeaderTitle = styled.h1`
+  font-family: "Playfair Display";
   text-align: center;
   font-weight: bold;
   color: #fff;
-  font-size: 42px;
+  font-size: 60px;
+  line-height: 0;
 `
 const BlogListPost = styled.div`
   padding: 80px 0;
@@ -53,14 +55,24 @@ const CustomLink = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px;
-  max-height: 350px;
-  min-height: 100%;
+  padding: 40px 40px 30px;
+  max-height: 400px;
+  min-height: 300px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 15px;
   text-decoration: none !important;
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.01, 1.01);
+  }
+
+  &:focus {
+    transform: translateY(0px) scale(1, 1);
+  }
+
 `
 const CustonLinkText = styled.h5`
   font-size: 32px;
@@ -75,14 +87,17 @@ const CustomLinkDate = styled.p`
 function BlogPage({ data }) {
   const { edges } = data.allMarkdownRemark
 
-  console.log(edges)
-
   return (
     <Layout>
       <Seo title={"Blog"} />
       <BlogHeader>
         <div className="container">
           <BlogHeaderTitle className="pb-5">My Journal</BlogHeaderTitle>
+          <p style={{ color: "white", opacity: 0.8 }}>
+            <center>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </center>
+          </p>
         </div>
         <SVGWrapper>
           {/* f6f8fc */}
@@ -100,6 +115,7 @@ function BlogPage({ data }) {
         <div className="container">
           <div className="row">
             {edges.map(post => {
+              console.log(post.node.excerpt.length)
               return (
                 <div
                   className="mb-5 col-md-4 col-12"
@@ -136,7 +152,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 80)
           fields {
             slug
           }
