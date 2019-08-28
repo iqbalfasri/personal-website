@@ -100,7 +100,6 @@ function BlogPage({ data }) {
           </p>
         </div>
         <SVGWrapper>
-          {/* f6f8fc */}
           <WavesSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
               fill="#f6f8fc"
