@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
-import Seo from "../components/seo"
-import Layout from "../components/layout"
+import Seo from "../components/SeoComponent"
+import Layout from "../components/LayoutComponent"
 import styled from "styled-components"
 
 /**
@@ -72,7 +72,6 @@ const CustomLink = styled(Link)`
   &:focus {
     transform: translateY(0px) scale(1, 1);
   }
-
 `
 const CustonLinkText = styled.h5`
   font-size: 32px;

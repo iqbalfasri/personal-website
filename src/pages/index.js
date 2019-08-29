@@ -1,13 +1,17 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/LayoutComponent"
+import SEO from "../components/SeoComponent"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div className="main-page">
-    <img loading="lazy" className="ilustration" src={require("../images/under_construct@2x.svg")} />
+      <img
+        loading="lazy"
+        className="ilustration"
+        src={require("../images/under_construct@2x.svg")}
+      />
       <h1>Nanti dulu ya, websitenya lagi dibuat</h1>
       <div className="contact">
         <p>Kalau ada keperluan, bisa kontak saya</p>

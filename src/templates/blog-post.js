@@ -1,12 +1,11 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
-import Seo from "../components/seo"
+import Seo from "../components/SeoComponent"
 
 function BlogPostTemplate({ data }) {
   const post = data.markdownRemark
   const title = post.frontmatter.title
   const content = post.html
-  console.log(post)
 
   return (
     <Fragment>
@@ -28,7 +27,6 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 30)
       html
       frontmatter {
         title
@@ -37,5 +35,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-console.log(pageQuery, "page query")
