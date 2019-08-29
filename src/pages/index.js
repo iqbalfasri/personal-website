@@ -10,7 +10,7 @@ const IndexPage = () => (
       <img
         loading="lazy"
         className="ilustration"
-        src={require("../images/under_construct@2x.svg")}
+        src={require("../assets/images/under_construct@2x.svg")}
       />
       <h1>Nanti dulu ya, websitenya lagi dibuat</h1>
       <div className="contact">
