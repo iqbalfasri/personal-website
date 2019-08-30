@@ -9,11 +9,11 @@ import styled from "styled-components"
  */
 const BlogHeader = styled.div`
   position: relative;
-  height: 50vh;
+  height: 70vh;
   background: #6d94ca;
-  background: -moz-linear-gradient(315deg, #6d94ca 0%, #a8c1ef 100%);
-  background: -webkit-linear-gradient(315deg, #6d94ca 0%, #a8c1ef 100%);
-  background: linear-gradient(315deg, #6d94ca 0%, #a8c1ef 100%);
+  background: -moz-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: -webkit-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,12 +75,13 @@ const CustomLink = styled(Link)`
 `
 const CustonLinkText = styled.h5`
   font-size: 32px;
-  color: #222;
+  color: #2e3338;
   font-weight: bold;
 `
 const CustomLinkDate = styled.p`
   font-size: 14px;
   opacity: 0.7;
+  color: #717796;
 `
 
 function BlogPage({ data }) {
@@ -124,7 +125,7 @@ function BlogPage({ data }) {
                     <CustonLinkText>
                       {post.node.frontmatter.title}
                     </CustonLinkText>
-                    <p>{post.node.excerpt}</p>
+                    <p style={{ color: "#2e3338" }}>{post.node.excerpt}</p>
                     <CustomLinkDate>
                       {post.node.frontmatter.date}
                     </CustomLinkDate>

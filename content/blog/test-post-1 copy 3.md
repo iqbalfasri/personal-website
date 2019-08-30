@@ -1,6 +1,6 @@
 ---
 title: Semua ada waktunya
-date: "2015-05-06T23:46:37.121Z"
+date: "2019-05-06T23:46:37.121Z"
 ---
 
 Hallo, saya Iqbal Fasri atau biasa dipanggil iqbal pake "Q".

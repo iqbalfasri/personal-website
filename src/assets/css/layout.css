@@ -29,9 +29,8 @@ body {
 }
 
 .main-page h1,
-p,
 a {
-  color: #424c6d;
+  /* color: #424c6d; */
 }
 .main-page h1 {
   font-weight: 700;

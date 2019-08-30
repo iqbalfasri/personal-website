@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Iqbal Fasri`,
     description: `My Personal website.`,
-    author: `@gatsbyjs`,
+    author: `@iqbalfasri`,
   },
   plugins: [
     `gatsby-plugin-netlify`,
