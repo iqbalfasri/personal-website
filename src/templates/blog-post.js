@@ -21,7 +21,7 @@ const BlogDetailTitle = styled.h1`
 
 const BlogDetailDate = styled.p`
   text-align: center;
-  font-size: 14px
+  font-size: 14px;
 `
 
 const BlogDetailContent = styled.div`
@@ -44,7 +44,9 @@ function BlogPostTemplate({ data }) {
       <div className="container">
         <BlogDetailWrapper>
           <BlogDetailTitle>{title}</BlogDetailTitle>
-          <BlogDetailDate>{date} - {author}</BlogDetailDate>
+          <BlogDetailDate>
+            {date} - {author}
+          </BlogDetailDate>
           <BlogDetailContent>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </BlogDetailContent>
