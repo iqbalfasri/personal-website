@@ -25,9 +25,14 @@ const BlogDetailDate = styled.p`
 `
 
 const BlogDetailContent = styled.div`
-  /* background-color: salmon; */
   padding: 40px 0;
   color: #2e3338;
+
+  p {
+    color: #2e3338;
+    font-size: 18px;
+    font-weight: normal;
+  }
 `
 
 function BlogPostTemplate({ data }) {

@@ -8,7 +8,7 @@ import {
   BlogListPost,
   CustomLink,
   CustomLinkDate,
-  CustonLinkText,
+  CustomLinkText,
   SVGWrapper,
   WavesSVG
 } from "../components/BlogComponent"
@@ -51,9 +51,9 @@ function BlogPage({ data }) {
                   key={post.node.id}
                 >
                   <CustomLink to={post.node.fields.slug}>
-                    <CustonLinkText>
+                    <CustomLinkText>
                       {post.node.frontmatter.title}
-                    </CustonLinkText>
+                    </CustomLinkText>
                     <p style={{ color: "#2e3338" }}>{post.node.excerpt}</p>
                     <CustomLinkDate>
                       {post.node.frontmatter.date}

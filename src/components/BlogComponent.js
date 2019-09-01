@@ -67,14 +67,14 @@ const CustomLink = styled(Link)`
   transition: transform 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(-10px) scale(1.01, 1.01);
+    transform: translateY(-10px);
   }
 
   &:focus {
     transform: translateY(0px) scale(1, 1);
   }
 `
-const CustonLinkText = styled.h5`
+const CustomLinkText = styled.h5`
   font-size: 32px;
   color: #2e3338;
   font-weight: bold;
@@ -92,6 +92,6 @@ export {
   SVGWrapper,
   WavesSVG,
   CustomLink,
-  CustonLinkText,
+  CustomLinkText,
   CustomLinkDate,
 }
