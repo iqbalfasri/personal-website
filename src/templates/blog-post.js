@@ -1,8 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import styled from "styled-components"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import Seo from "../components/SeoComponent"
 import Layout from "../components/LayoutComponent"
-import styled from "styled-components"
 
 const BlogDetailWrapper = styled.div`
   position: relative;
@@ -12,16 +14,6 @@ const BlogDetailWrapper = styled.div`
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
   padding: 70px;
   box-sizing: border-box;
-
-
-  &:before {
-    position: absolute;
-    content: "";
-    left: 0;
-    width: 50px;
-    height: 50px;
-    background: salmon;
-  }
 `
 
 const BlogDetailTitle = styled.h1`
@@ -46,6 +38,24 @@ const BlogDetailContent = styled.div`
   }
 `
 
+const BlogBackButton = styled(Link)`
+    position: absolute;
+    content: "";
+    left: -30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: lighter;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #2e3338;
+`
+
+
 function BlogPostTemplate({ data }) {
   const post = data.markdownRemark
   const content = post.html
@@ -59,6 +69,9 @@ function BlogPostTemplate({ data }) {
       <Seo title={`${title} - Blog`} description={title} />
       <div className="container">
         <BlogDetailWrapper>
+          <BlogBackButton to="/blog">
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </BlogBackButton>
           <BlogDetailTitle>{title}</BlogDetailTitle>
           <BlogDetailDate>
             {date} - {author}
