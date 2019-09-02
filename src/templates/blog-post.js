@@ -5,12 +5,23 @@ import Layout from "../components/LayoutComponent"
 import styled from "styled-components"
 
 const BlogDetailWrapper = styled.div`
+  position: relative;
   background-color: white;
   margin: 50px auto;
   border-radius: 15px;
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
   padding: 70px;
   box-sizing: border-box;
+
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: salmon;
+  }
 `
 
 const BlogDetailTitle = styled.h1`
