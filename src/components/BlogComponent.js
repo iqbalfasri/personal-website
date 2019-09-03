@@ -11,12 +11,7 @@ import styled from "styled-components"
 const BlogHeader = styled.div`
   position: relative;
   height: 70vh;
-  /* background: #4481eb; */
   background: #5c6ac4;
-  /* background: #6d94ca;
-  background: -moz-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
-  background: -webkit-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
-  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%); */
   display: flex;
   flex-direction: column;
   justify-content: center;

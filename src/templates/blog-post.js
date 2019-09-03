@@ -14,6 +14,36 @@ const BlogDetailWrapper = styled.div`
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
   padding: 70px;
   box-sizing: border-box;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 65px solid #ffbf7f;
+    transform: rotate(40deg);
+    z-index: -5;
+    top: -120px;
+    right: -150px;
+    border-radius: 100%;
+    opacity: 0.2;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 65px solid #ff7470;
+    transform: rotate(40deg);
+    z-index: -1;
+    left: -150px;
+    bottom: -120px;
+    border-radius: 100%;
+    opacity: 0.2;
+  }
 `
 
 const BlogDetailTitle = styled.h1`
@@ -43,10 +73,7 @@ const BlogDetailBackButton = styled(Link)`
   margin: auto auto 150px;
   display: block;
   color: #fff;
-  background: #6d94ca;
-  background: -moz-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
-  background: -webkit-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
-  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: #5c6ac4;
   max-width: 60px;
   min-height: 60px;
   font-size: 22px;
