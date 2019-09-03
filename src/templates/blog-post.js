@@ -66,8 +66,6 @@ function BlogPostTemplate({ data }) {
   const { title, date } = post.frontmatter
   const { author } = data.site.siteMetadata
 
-  console.log(author)
-
   return (
     <Layout>
       <Seo title={`${title} - Blog`} description={title} />
