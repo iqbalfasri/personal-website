@@ -55,7 +55,7 @@ const BlogHeaderTitle = styled.h1`
   text-align: center;
   font-weight: bold;
   color: #fff;
-  font-size: 64px;
+  font-size: 82px;
   line-height: 0;
 `
 const BlogListPost = styled.div`
