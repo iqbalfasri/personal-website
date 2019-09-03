@@ -58,7 +58,7 @@ const CustomLink = styled(Link)`
   justify-content: space-between;
   padding: 40px 40px 30px;
   max-height: 400px;
-  min-height: 300px;
+  min-height: 310px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 15px;
@@ -77,12 +77,12 @@ const CustomLink = styled(Link)`
 const CustomLinkText = styled.h5`
   font-size: 32px;
   color: #2e3338;
-  font-weight: bold;
+  font-weight: 700;
 `
 const CustomLinkDate = styled.p`
   font-size: 14px;
-  opacity: 0.7;
-  color: #717796;
+  opacity: 0.6;
+  color: #2e3338;
 `
 
 export {
