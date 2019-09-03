@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import Seo from "../components/SeoComponent"
 import Layout from "../components/LayoutComponent"
 
@@ -39,22 +39,26 @@ const BlogDetailContent = styled.div`
 `
 
 const BlogDetailBackButton = styled(Link)`
-    position: absolute;
-    content: "";
-    left: -30px;
-    width: 50px;
-    height: 50px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    font-weight: lighter;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    color: #2e3338;
-`
+  position: relative;
+  margin: auto auto 150px;
+  display: block;
+  color: #fff;
+  background: #6d94ca;
+  background: -moz-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: -webkit-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  max-width: 60px;
+  min-height: 60px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  border-radius: 100%;
 
+  &:hover {
+    color: #fff;
+  }
+`
 
 function BlogPostTemplate({ data }) {
   const post = data.markdownRemark
@@ -69,9 +73,6 @@ function BlogPostTemplate({ data }) {
       <Seo title={`${title} - Blog`} description={title} />
       <div className="container">
         <BlogDetailWrapper>
-          <BlogDetailBackButton to="/blog">
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </BlogDetailBackButton>
           <BlogDetailTitle>{title}</BlogDetailTitle>
           <BlogDetailDate>
             {date} - {author}
@@ -80,6 +81,9 @@ function BlogPostTemplate({ data }) {
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </BlogDetailContent>
         </BlogDetailWrapper>
+        <BlogDetailBackButton to="/blog">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </BlogDetailBackButton>
       </div>
     </Layout>
   )

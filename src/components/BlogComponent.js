@@ -11,14 +11,44 @@ import styled from "styled-components"
 const BlogHeader = styled.div`
   position: relative;
   height: 70vh;
-  background: #6d94ca;
+  /* background: #4481eb; */
+  background: #5c6ac4;
+  /* background: #6d94ca;
   background: -moz-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
   background: -webkit-linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
-  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%);
+  background: linear-gradient(45deg, #6d94ca 0%, #a8c1ef 100%); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 5;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 65px solid #ffbf7f;
+    transform: rotate(40deg);
+    z-index: -5;
+    top: -120px;
+    right: -150px;
+    border-radius: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 20px solid #56cad8;
+    transform: rotate(40deg);
+    z-index: 5;
+    bottom: 30px;
+    left: 0;
+  }
 `
 const BlogHeaderTitle = styled.h1`
   font-family: "Playfair Display";
@@ -29,7 +59,23 @@ const BlogHeaderTitle = styled.h1`
   line-height: 0;
 `
 const BlogListPost = styled.div`
+  position: relative;
   padding: 80px 0;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 65px solid #ff7470;
+    transform: rotate(40deg);
+    z-index: -1;
+    right: -150px;
+    bottom: -20px;
+    border-radius: 100%;
+  }
 `
 
 /**
