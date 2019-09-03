@@ -38,7 +38,7 @@ const BlogDetailContent = styled.div`
   }
 `
 
-const BlogBackButton = styled(Link)`
+const BlogDetailBackButton = styled(Link)`
     position: absolute;
     content: "";
     left: -30px;
@@ -69,9 +69,9 @@ function BlogPostTemplate({ data }) {
       <Seo title={`${title} - Blog`} description={title} />
       <div className="container">
         <BlogDetailWrapper>
-          <BlogBackButton to="/blog">
+          <BlogDetailBackButton to="/blog">
             <FontAwesomeIcon icon={faArrowLeft} />
-          </BlogBackButton>
+          </BlogDetailBackButton>
           <BlogDetailTitle>{title}</BlogDetailTitle>
           <BlogDetailDate>
             {date} - {author}
