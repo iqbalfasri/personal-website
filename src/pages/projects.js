@@ -1,34 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-
+import React, { useEffect, useState } from "react"
+import axios from "axios"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 
 const ProjectsPage = () => {
   const [repos, setRepos] = useState([])
+  const [loading, setLoading] = useState(true)
 
   /**
    * Retrieve my all repositories
    */
   useEffect(() => {
-    const URL_GH = 'https://api.github.com/users/iqbalfasri/repos'
-    fetch(URL_GH)
-      .then(res => res.json())
-      .then(repos => setRepos(repos))
-      .catch(error => console.error(error))
+    const fetchRepos = async () => {
+      const fetch = await axios.get("https://api.github.com/users/iqbalfasri/repos")
+      const getRepos = fetch.data
+
+      setRepos(getRepos)
+      setLoading(false)
+    }
+
+    fetchRepos()
   }, [])
 
   /**
    * Mapping data
    */
-  repos.map(r => console.log(r['name'], r['description']))
+  // repos.map(r => console.log(r['name'], r['description']))
 
   return (
     <div>
-      <h1>ProjectsPage</h1>
-      <FontAwesomeIcon icon={faCoffee} />
-    </div >
+      <h1>{loading ? "Loading" : "ProjectsPage"}</h1>
+    </div>
   )
 }
 
-export default ProjectsPage;
+export default ProjectsPage
