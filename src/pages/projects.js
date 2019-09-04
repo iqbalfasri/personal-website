@@ -37,8 +37,8 @@ const ProjectsPage = () => {
         <center>ProjectsPage</center>
       </h1>
       <div className="container">
-        <DisplayCardRepos repositories={reposLimit} loading={loading} />
-        <LoadMore onClick={handleLoadMore} text="Load more" loading={loading} />
+        <DisplayCardRepos repositories={reposLimit} />
+        <LoadMore onClick={handleLoadMore} text="Load more" loading={loading.toString()} />
       </div>
     </Layout>
   )

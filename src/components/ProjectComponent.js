@@ -62,7 +62,7 @@ const ProjectButtonLoadMore = styled.button`
   box-shadow: 0px 10px 4px -10px rgba(0, 64, 128, 0.2);
   border-radius: 10px;
   outline: none;
-  visibility: ${props => (props.loading ? "hidden" : "visible")};
+  visibility: ${props => (props.loading === "true" ? "hidden" : "visible")};
 
   &:hover {
     color: #fff;
@@ -80,7 +80,7 @@ export const LoadMore = props => (
  * @param {*} repositories
  * display each item repository
  */
-export const DisplayCardRepos = ({ repositories, loading }) => {
+export const DisplayCardRepos = ({ repositories }) => {
   return (
     <div className="row">
       {repositories.map(data => {
