@@ -10,7 +10,7 @@ import {
   CustomLinkDate,
   CustomLinkText,
   SVGWrapper,
-  WavesSVG
+  WavesSVG,
 } from "../components/BlogComponent"
 
 function BlogPage({ data }) {
@@ -43,7 +43,6 @@ function BlogPage({ data }) {
         <div className="container">
           <div className="row">
             {edges.map(post => {
-              console.log(post.node.excerpt.length)
               return (
                 <div
                   className="mb-5 col-md-4 col-12"
