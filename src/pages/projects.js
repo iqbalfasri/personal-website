@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoffee } from "@fortawesome/free-solid-svg-icons"
+import Layout from "../components/LayoutComponent"
+import { DisplayCardRepos, LoadMore } from "../components/ProjectComponent"
 
 const ProjectsPage = () => {
   const [repos, setRepos] = useState([])
   const [loading, setLoading] = useState(true)
+  const [limitRepo, setlimitRepo] = useState(6)
 
-  /**
-   * Retrieve my all repositories
-   */
+  // Retrieve my all repositories
   useEffect(() => {
     const fetchRepos = async () => {
-      const fetch = await axios.get("https://api.github.com/users/iqbalfasri/repos")
+      const fetch = await axios.get(
+        "https://api.github.com/users/iqbalfasri/repos"
+      )
       const getRepos = fetch.data
 
       setRepos(getRepos)
@@ -22,15 +23,24 @@ const ProjectsPage = () => {
     fetchRepos()
   }, [])
 
-  /**
-   * Mapping data
-   */
-  // repos.map(r => console.log(r['name'], r['description']))
+  // Limit data to display repository
+  const reposLimit = repos.slice(0, limitRepo)
+
+  // Handle button to load more data repository
+  const handleLoadMore = () => {
+    setlimitRepo(limitRepo + 3)
+  }
 
   return (
-    <div>
-      <h1>{loading ? "Loading" : "ProjectsPage"}</h1>
-    </div>
+    <Layout>
+      <h1>
+        <center>ProjectsPage</center>
+      </h1>
+      <div className="container">
+        <DisplayCardRepos repositories={reposLimit} loading={loading} />
+        <LoadMore onClick={handleLoadMore} text="Load more" loading={loading} />
+      </div>
+    </Layout>
   )
 }
 
