@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import Layout from "../components/LayoutComponent"
 import Seo from "../components/SeoComponent"
-import { DisplayCardRepos, LoadMore } from "../components/ProjectComponent"
+import {
+  DisplayCardRepos,
+  LoadMore,
+  ProjectHeader as Header,
+} from "../components/ProjectComponent"
 
 const ProjectsPage = () => {
   const [repos, setRepos] = useState([])
@@ -35,9 +39,9 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <Seo title="Projects" />
-      <h1>
-        <center>ProjectsPage</center>
-      </h1>
+      <Header>
+        <h1>Project Page</h1>
+      </Header>
       <div className="container">
         <DisplayCardRepos repositories={reposLimit} />
         <LoadMore

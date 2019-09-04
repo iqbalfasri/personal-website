@@ -8,6 +8,55 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 /**
+ * Component: Header
+ */
+export const ProjectHeader = styled.div`
+  position: relative;
+  height: 70vh;
+  background: #2e3338;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  overflow: hidden;
+  margin: 0 0 100px;
+
+  h1 {
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 64px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border: 65px solid #ffbf7f;
+    transform: rotate(40deg);
+    z-index: -5;
+    top: -120px;
+    right: -150px;
+    border-radius: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 20px solid #56cad8;
+    transform: rotate(40deg);
+    z-index: 5;
+    bottom: 30px;
+    left: 0;
+  }
+`
+
+/**
  * Component: Link
  */
 const ProjectCardLink = styled.a`
