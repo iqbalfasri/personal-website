@@ -120,6 +120,7 @@ const ProjectButtonLoadMore = styled.button`
 export const LoadMore = props => (
   <ProjectButtonLoadMore {...props}>
     <FontAwesomeIcon icon={faChevronDown} />
+    &nbsp;
     {props.text}
   </ProjectButtonLoadMore>
 )

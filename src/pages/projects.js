@@ -42,13 +42,19 @@ const ProjectsPage = () => {
       <Header>
         <h1>Project Page</h1>
       </Header>
-      <div className="container">
-        <DisplayCardRepos repositories={reposLimit} />
-        <LoadMore
-          onClick={handleLoadMore}
-          text="Load more"
-          loading={loading.toString()}
-        />
+      {/* Github Repositories */}
+      <div>
+        <div className="container">
+          <h3 className="mb-5" style={{ fontWeight: "700", fontSize: 32 }}>
+            My github repositories
+          </h3>
+          <DisplayCardRepos repositories={reposLimit} />
+          <LoadMore
+            onClick={handleLoadMore}
+            text="Load more"
+            loading={loading.toString()}
+          />
+        </div>
       </div>
     </Layout>
   )
