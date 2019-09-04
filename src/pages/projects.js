@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import Layout from "../components/LayoutComponent"
+import Seo from "../components/SeoComponent"
 import { DisplayCardRepos, LoadMore } from "../components/ProjectComponent"
 
 const ProjectsPage = () => {
@@ -33,12 +34,17 @@ const ProjectsPage = () => {
 
   return (
     <Layout>
+      <Seo title="Projects" />
       <h1>
         <center>ProjectsPage</center>
       </h1>
       <div className="container">
         <DisplayCardRepos repositories={reposLimit} />
-        <LoadMore onClick={handleLoadMore} text="Load more" loading={loading.toString()} />
+        <LoadMore
+          onClick={handleLoadMore}
+          text="Load more"
+          loading={loading.toString()}
+        />
       </div>
     </Layout>
   )
