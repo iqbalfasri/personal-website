@@ -8,6 +8,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className="main-page">
       <img
+        alt="Ilustrasi"
         loading="lazy"
         className="ilustration"
         src={require("../assets/images/under_construct@2x.svg")}
