@@ -173,5 +173,5 @@ DisplayCardRepos.defaultProps = {
 }
 
 DisplayCardRepos.propTypes = {
-  state: PropTypes.object(PropTypes.object),
+  state: PropTypes.object,
 }
