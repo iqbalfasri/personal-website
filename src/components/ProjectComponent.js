@@ -168,10 +168,10 @@ export const DisplayCardRepos = ({ state }) => {
   )
 }
 
-// DisplayCardRepos.defaultProps = {
-//   repositories: [],
-// }
+DisplayCardRepos.defaultProps = {
+  state: {},
+}
 
-// DisplayCardRepos.propTypes = {
-//   repositories: PropTypes.arrayOf(PropTypes.object),
-// }
+DisplayCardRepos.propTypes = {
+  state: PropTypes.object(PropTypes.object),
+}
