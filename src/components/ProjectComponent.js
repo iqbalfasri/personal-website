@@ -125,37 +125,53 @@ export const LoadMore = props => (
   </ProjectButtonLoadMore>
 )
 
+/** Text Loading */
+const TextLoading = styled.p`
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 /**
  *
  * @param {*} repositories
  * display each item repository
  */
-export const DisplayCardRepos = ({ repositories }) => {
+export const DisplayCardRepos = ({ state }) => {
+  const { repo, loading } = state
   return (
     <div className="row">
-      {repositories.map(data => {
-        return (
-          <div key={data.id} id={data.id} className="mb-5 col-md-4 col-12">
-            <ProjectCardLink target="__blank" href={data.html_url}>
-              <ProjectCardLinkText>{data.name}</ProjectCardLinkText>
-              <ProjectCardLinkSubText>
-                {data.description}
-              </ProjectCardLinkSubText>
-              <ProjectCardLinkDateText>
-                {data.created_at}
-              </ProjectCardLinkDateText>
-            </ProjectCardLink>
-          </div>
-        )
-      })}
+      {loading ? (
+        <TextLoading>Loading...</TextLoading>
+      ) : (
+        <React.Fragment>
+          {repo.map(data => {
+            return (
+              <div key={data.id} id={data.id} className="mb-5 col-md-4 col-12">
+                <ProjectCardLink target="__blank" href={data.html_url}>
+                  <ProjectCardLinkText>{data.name}</ProjectCardLinkText>
+                  <ProjectCardLinkSubText>
+                    {data.description}
+                  </ProjectCardLinkSubText>
+                  <ProjectCardLinkDateText>
+                    {data.created_at}
+                  </ProjectCardLinkDateText>
+                </ProjectCardLink>
+              </div>
+            )
+          })}
+        </React.Fragment>
+      )}
     </div>
   )
 }
 
-DisplayCardRepos.defaultProps = {
-  repositories: [],
-}
+// DisplayCardRepos.defaultProps = {
+//   repositories: [],
+// }
 
-DisplayCardRepos.propTypes = {
-  repositories: PropTypes.arrayOf(PropTypes.object),
-}
+// DisplayCardRepos.propTypes = {
+//   repositories: PropTypes.arrayOf(PropTypes.object),
+// }

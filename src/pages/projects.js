@@ -16,9 +16,8 @@ const ProjectsPage = () => {
   // Retrieve my all repositories
   useEffect(() => {
     const fetchRepos = async () => {
-      const fetch = await axios.get(
-        "https://api.github.com/users/iqbalfasri/repos"
-      )
+      const REPO_ENDPOINT = "https://api.github.com/users/iqbalfasri/repos"
+      const fetch = await axios.get(REPO_ENDPOINT)
       const getRepos = fetch.data
 
       setRepos(getRepos)
@@ -42,13 +41,12 @@ const ProjectsPage = () => {
       <Header>
         <h1>Project Page</h1>
       </Header>
-      {/* Github Repositories */}
       <div>
         <div className="container">
           <h3 className="mb-5" style={{ fontWeight: "700", fontSize: 32 }}>
             My github repositories
           </h3>
-          <DisplayCardRepos repositories={reposLimit} />
+          <DisplayCardRepos state={{ repo: reposLimit, loading: loading }} />
           <LoadMore
             onClick={handleLoadMore}
             text="Load more"
