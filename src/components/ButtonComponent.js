@@ -1,6 +1,8 @@
 import React from "react"
-import styled from "styled-components"
 import PropTypes from "prop-types"
+import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
 /**
  * Pagination button
@@ -33,7 +35,12 @@ const LoadMoreButtonStyled = styled.button`
   }
 `
 export const LoadMore = props => {
-  return <LoadMoreButtonStyled {...props}>{props.text}</LoadMoreButtonStyled>
+  return (
+    <LoadMoreButtonStyled {...props}>
+      <FontAwesomeIcon icon={faAngleDown} />
+      &nbsp;&nbsp;{props.text}
+    </LoadMoreButtonStyled>
+  )
 }
 
 LoadMore.defaultProps = {
