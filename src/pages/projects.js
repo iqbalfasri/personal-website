@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import Layout from "../components/LayoutComponent"
 import Seo from "../components/SeoComponent"
-import {
-  DisplayCardRepos,
+import DisplayCardRepos, {
   LoadMore,
   ProjectHeader as Header,
 } from "../components/ProjectComponent"

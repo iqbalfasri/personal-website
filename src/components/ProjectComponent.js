@@ -139,7 +139,7 @@ const TextLoading = styled.p`
  * @param {*} repositories
  * display each item repository
  */
-export const DisplayCardRepos = ({ state }) => {
+const DisplayCardRepos = ({ state }) => {
   const { repo, loading } = state
   return (
     <div className="row">
@@ -167,6 +167,8 @@ export const DisplayCardRepos = ({ state }) => {
     </div>
   )
 }
+
+export default DisplayCardRepos
 
 DisplayCardRepos.defaultProps = {
   state: {},
