@@ -9,6 +9,7 @@ import DisplayCardRepos, {
 
 const ProjectsPage = () => {
   const [repos, setRepos] = useState([])
+  const [shots, setShots] = useState([])
   const [loading, setLoading] = useState(true)
   const [limitRepo, setlimitRepo] = useState(6)
 
@@ -23,8 +24,22 @@ const ProjectsPage = () => {
       setLoading(false)
     }
 
+    const fetchShots = async () => {
+      const TOKEN =
+        "209c27aafc2a776605bc041be880d0bfa94dd99f2f339128b54d9507fadbc209"
+      const SHOTS_ENDPOINT = `https://api.dribbble.com/v2/user/shots?access_token=${TOKEN}`
+      const fetch = await axios.get(SHOTS_ENDPOINT)
+      const getShots = fetch.data
+
+      setShots(getShots)
+    }
+
     fetchRepos()
+    fetchShots()
   }, [])
+
+  // Log shots
+  shots.map(s => console.log(s.images.hidpi))
 
   // Limit data to display repository
   const reposLimit = repos.slice(0, limitRepo)
