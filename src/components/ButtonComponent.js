@@ -11,13 +11,14 @@ const LoadMoreButtonStyled = styled.button`
   padding: 10px 40px;
   display: block;
   color: #fff;
-  background: #5c6ac4;
+  background: #2e3338;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
   box-shadow: 0px 10px 4px -10px rgba(0, 64, 128, 0.2);
-  border-radius: 10px;
+  border-radius: 25px;
   outline: none;
+  letter-spacing: 0.5px;
 `
 export const LoadMore = props => {
   return <LoadMoreButtonStyled {...props}>{props.text}</LoadMoreButtonStyled>
