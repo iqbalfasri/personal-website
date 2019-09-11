@@ -73,7 +73,7 @@ const BlogDetailBackButton = styled(Link)`
   margin: auto auto 150px;
   display: block;
   color: #fff;
-  background: #5c6ac4;
+  background: #2e3338;
   max-width: 60px;
   min-height: 60px;
   font-size: 22px;
