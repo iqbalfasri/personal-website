@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/SeoComponent"
 import Layout from "../components/LayoutComponent"
@@ -12,9 +12,21 @@ import {
   SVGWrapper,
   WavesSVG,
 } from "../components/BlogComponent"
+import { LoadMore } from "../components/ButtonComponent"
 
 function BlogPage({ data }) {
+  const [limitContent, setLimitContent] = useState(6)
   const { edges } = data.allMarkdownRemark
+
+  // Paginate content
+  const paginateContent = edges.slice(0, limitContent)
+
+  // Handle paginate content
+  const handleLoadmore = e => {
+    e.preventDefault()
+    // Set limit content
+    setLimitContent(limitContent + 3)
+  }
 
   return (
     <Layout>
@@ -42,7 +54,7 @@ function BlogPage({ data }) {
       <BlogListPost>
         <div className="container">
           <div className="row">
-            {edges.map(post => {
+            {paginateContent.map(post => {
               return (
                 <div
                   className="mb-5 col-md-4 col-12"
@@ -63,6 +75,7 @@ function BlogPage({ data }) {
             })}
           </div>
         </div>
+        <LoadMore onClick={handleLoadmore} text="Load more" />
       </BlogListPost>
     </Layout>
   )
