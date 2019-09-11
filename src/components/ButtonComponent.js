@@ -15,10 +15,22 @@ const LoadMoreButtonStyled = styled.button`
   font-size: 16px;
   font-weight: 500;
   text-align: center;
-  box-shadow: 0px 10px 4px -10px rgba(0, 64, 128, 0.2);
   border-radius: 25px;
   outline: none;
   letter-spacing: 0.5px;
+  border: none;
+  transition: 0.3s transform ease-in-out;
+
+  /* Remove default outline color when button click */
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
+  /* Add hover effect */
+  &:hover {
+    transform: translateY(-1.5px);
+  }
 `
 export const LoadMore = props => {
   return <LoadMoreButtonStyled {...props}>{props.text}</LoadMoreButtonStyled>
