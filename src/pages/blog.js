@@ -20,6 +20,7 @@ function BlogPage({ data }) {
 
   // Paginate content
   const paginateContent = edges.slice(0, limitContent)
+  const visiblePagination = edges.length > limitContent ? true : false
 
   // Handle paginate content
   const handleLoadmore = e => {
@@ -75,7 +76,7 @@ function BlogPage({ data }) {
             })}
           </div>
         </div>
-        <LoadMore onClick={handleLoadmore} text="Load more" />
+        <LoadMore isVisible={visiblePagination} onClick={handleLoadmore} text="Load more" />
       </BlogListPost>
     </Layout>
   )

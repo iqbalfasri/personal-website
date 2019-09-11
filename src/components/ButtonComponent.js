@@ -22,6 +22,7 @@ const LoadMoreButtonStyled = styled.button`
   letter-spacing: 0.5px;
   border: none;
   transition: 0.3s transform ease-in-out;
+  visibility: ${props => (props.isVisible ? "visible" : "hidden")};
 
   /* Remove default outline color when button click */
   &:focus {
