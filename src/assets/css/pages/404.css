@@ -1,0 +1,68 @@
+:root {
+  --font-size: 3rem;
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size: 5rem;
+  }
+}
+
+.back-to-home-link {
+  font-size: 18px;
+  color: white;
+  padding: 10px 0px;
+  margin: 40px 0px;
+  letter-spacing: 2px;
+}
+.back-to-home-link:hover{
+  color: white;
+}
+
+.char {
+  text-transform: uppercase;
+}
+.not-found-text {
+  font-weight: 700;
+  color: #f8d448;
+  height: calc(var(--font-size) * 3);
+  overflow: hidden;
+}
+.not-found-text .char {
+  text-shadow: 0 calc(var(--font-size) * -1) 0 #f8d448,
+    0 calc(var(--font-size) * -2) 0 #f8d448, 0 calc(var(--font-size) * -3) 0 #f8d448,
+    0 calc(var(--font-size) * 1) 0 #f8d448, 0 calc(var(--font-size) * 2) 0 #f8d448,
+    0 calc(var(--font-size) * 3) 0 #f8d448;
+}
+.not-found-text .char:nth-of-type(even) {
+  -webkit-animation: scrollDown 0.5s 0.25s infinite linear;
+  animation: scrollDown 0.5s 0.25s infinite linear;
+}
+.not-found-text .char:nth-of-type(odd) {
+  -webkit-animation: scrollUp 0.5s 0.25s infinite linear;
+  animation: scrollUp 0.5s 0.25s infinite linear;
+}
+
+@-webkit-keyframes scrollUp {
+  to {
+    -webkit-transform: translate(0, calc(var(--font-size) * -1));
+    transform: translate(0, calc(var(--font-size) * -1));
+  }
+}
+@keyframes scrollUp {
+  to {
+    -webkit-transform: translate(0, calc(var(--font-size) * -1));
+    transform: translate(0, calc(var(--font-size) * -1));
+  }
+}
+@-webkit-keyframes scrollDown {
+  to {
+    -webkit-transform: translate(0, calc(var(--font-size) * 1));
+    transform: translate(0, calc(var(--font-size) * 1));
+  }
+}
+@keyframes scrollDown {
+  to {
+    -webkit-transform: translate(0, calc(var(--font-size) * 1));
+    transform: translate(0, calc(var(--font-size) * 1));
+  }
+}

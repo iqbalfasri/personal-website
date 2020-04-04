@@ -12,7 +12,7 @@ import "../assets/css/layout.css"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="page">
       <main>{children}</main>
     </div>
   )
