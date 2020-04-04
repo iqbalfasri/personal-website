@@ -1,0 +1,77 @@
+.main-page {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.text--container {
+  top: 25vh;
+  position: relative;
+  width: 100%;
+  word-wrap: break-word;
+  color: #ffffff;
+}
+.text--container h1 {
+  font-size: 6rem;
+}
+.text--container h1:nth-child(2) {
+  text-decoration: underline;
+  text-decoration-color: #f8d448;
+}
+
+@media only screen and (max-width: 414px) {
+  .text--container h1 {
+    font-size: 3rem;
+    padding: 0px 30px;
+  }
+
+  .circle-me {
+    left: 3rem;
+    font-size: 8px !important;
+  }
+}
+
+/* Circle text style */
+.circle-me {
+  /* font-size: 24px; */
+  /* font-size: calc(20vmin / var(--char-total)); */
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  color: #f8d448;
+  position: absolute;
+  font-size: 24px;
+  margin: auto;
+  top: 25vh;
+  z-index: -3;
+  --speed: calc(0.2s * var(--char-total));
+  -webkit-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite;
+  -webkit-animation-duration: var(--speed);
+  animation-duration: var(--speed);
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+.circle-me .char {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  line-height: 1;
+  text-align: center;
+  width: 1em;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  -webkit-transform: rotate(calc(160deg * var(--distance-sine)))
+    translateY(calc(-0.2em * var(--char-total)));
+  transform: rotate(calc(160deg * var(--distance-sine)))
+    translateY(calc(-0.2em * var(--char-total)));
+}

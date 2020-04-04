@@ -7,6 +7,24 @@
   }
 }
 
+.notfound-wrapper {
+  -webkit-box-align: center;
+  align-items: center;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size);
+  height: 100vh;
+  -webkit-box-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  font-weight: 300;
+  text-align: center;
+  width: 100vw;
+  background-color: #030409;
+}
+
 .back-to-home-link {
   font-size: 18px;
   color: white;
