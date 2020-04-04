@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import Splitting from "splitting"
+// import Splitting from "splitting"
 
 import "../assets/css/pages/404.css"
 import "splitting/dist/splitting.css"

@@ -33,6 +33,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
+      script={['https://unpkg.com/splitting/dist/splitting.min.js']}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {

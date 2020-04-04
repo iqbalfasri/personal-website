@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import Splitting from "splitting"
+// import Splitting from "splitting"
 
 import Layout from "../components/LayoutComponent"
 import SEO from "../components/SeoComponent"
