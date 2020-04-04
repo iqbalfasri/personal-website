@@ -33,7 +33,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      script={['https://unpkg.com/splitting/dist/splitting.min.js']}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -69,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    </Helmet>
   )
 }
 
